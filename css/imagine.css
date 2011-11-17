@@ -1,0 +1,45 @@
+    body{
+        background-color:#333;
+    }
+    
+    body div{
+        background-color:#fff;
+        border-bottom-left-radius:15px;
+        border-bottom-right-radius:15px;        
+    }
+
+    ul.menu{
+        list-style:none;
+    }
+    .menu li a span{
+        font-family: 'Bowlby One SC', sans-serif;
+        font-size:48px;
+        padding-right:7px;
+    }
+    
+    .menu li{
+        color:#003f92;
+    }
+    
+    .menu li a{
+        font-size:20px;
+        color:#ccc;
+        text-decoration:none;
+    }
+    
+    .selected, .menu li:hover {
+        color:#7db736;
+    }
+    hr{
+        color:#7db736;
+        background:#7db736;
+        height:5px;
+    }
+    h1{
+        margin-bottom:0;
+    }
+    .download_menu{
+        list-style:none;
+        padding-left:10px;
+    }
+    
