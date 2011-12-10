@@ -2,12 +2,24 @@
         background-color:#333;
     }
     
-    body div{
+    a{
+        color:#3fcf0f;
+    }
+    p{
+        font-size:.9em;
+        width:420px;
+        margin:0;
+        padding:0;
+        margin-bottom:5px;
+    }
+    
+    body > div{
         background-color:#fff;
         border-bottom-left-radius:15px;
         border-bottom-right-radius:15px;        
     }
-
+    /*blue 003f92*/
+    /*green 3fcf0f*/
     ul.menu{
         list-style:none;
     }
@@ -15,6 +27,15 @@
         font-family: 'Bowlby One SC', sans-serif;
         font-size:48px;
         padding-right:7px;
+
+    }
+    
+    .menu li a:hover span, .menu li a:hover{
+        color:#3fcf0f;
+    }
+    
+    .menu li.selected a{
+        color:#3fcf0f;
     }
     
     .menu li{
@@ -33,13 +54,79 @@
     hr{
         color:#7db736;
         background:#7db736;
-        height:5px;
+        height:4px;
+        width:300px;
+        position:relative;
+        left:-65px;
+        margin-bottom:5px;
     }
     h1{
         margin-bottom:0;
+        font-size:1.2em;
+        font-weight:normal;
+        position:relative;
+        left:-30px;
+    }
+    .page_content p{
+
     }
     .download_menu{
         list-style:none;
         padding-left:10px;
     }
     
+    .green_image{
+        background-image:url('../images/green_stripe.png');
+    }
+    
+    .join{
+        padding-top:10px;
+        height:70px;
+        width:100%;
+    }
+    
+    .green_box{
+        font-size:42px;
+        color:white;
+        background:#7db736;
+        border-radius:7px;
+        width:420px;
+        overflow:hidden;
+    }
+    
+    .list_to_embrace{
+        font-size: .37em;
+        list-style:none;
+        margin:20px;
+    }
+    
+    .list_to_embrace li{
+        line-height:90%;
+        margin:10px 10px 25px 10px;
+    }
+    
+    .list_to_embrace li div{
+        font-size:3em;
+        padding-top:5px;
+        margin-right:20px;
+        height:30px;
+        float:left;
+    }
+    .founder{
+        margin-top:30px;
+    }
+    .founder img{
+        border:2px solid #ccc;
+        padding:5px;
+        border-radius:4px;
+    }
+    
+    .kids{
+        width:100%;
+        margin:20px 60px;
+    }
+    .kids img{
+        border:3px solid #ccc;
+        padding:10px;
+        border-radius:4px;    
+    }
