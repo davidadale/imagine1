@@ -1,61 +1,212 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Imagine One</title>
-        <meta charset="utf-8" />
+    <head>
+        <title>Imagine 1</title>
+        <style>
+            .background{
+                width:980px;
+                margin:auto;
+                overflow: hidden;
+            }
+            #header{
+                padding:10px 20px;
+                width:100%;
+                height:100px;
+            }
+            #leftBar{
+                float:left;
+                width:180px;
+                background:#fff;
+                margin-right:10px;
+                
+            }
+            #center{
+                width:500px;
+                padding:50px 20px 30px 20px;
+                float:left;
+                background:rgba(255,255,255,.5);
+                border-radius:50px;
+                height:400px;
+            }
+            .logo{
+                width:120px;
+                height:100px;
+                background:rgba(255,255,255,.5);
+                float:left;
+                cursor:pointer;
+            }
+            .mainbuttons{
+                
+            }
+            
+            .mainbuttons ul{
+                list-style:none;
+            }
+            .mainbuttons ul li{
+                    float:left;
+            }
+            .mainbuttons li a{
+                text-align:center;
+                display:block;
+                width:100px;
+                height:50px;
+                border:1px dashed #fff;
+                background:rgba(255,255,255,.5);                
+            }
+        </style>
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/text.css" />
         <link rel="stylesheet" href="css/960.css" />
         <link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/imagine.css" />
-	</head>
-	<body>
-		
-		<div  class="container_12">
-			<div class="grid_3">
-			    <a href="index.html"><img src="images/logo.png"/></a>
-			    <ul class="menu">
-			        <li><a href="imagine.html"><span>1</span>imagine</a></li>
-			        <li><a href="embrace.html"><span>2</span>embrace</a></li>
-			        <li><a href="join.html"><span>3</span>join</a></li>
-			        <li><a href="share.html"><span>4</span>share</a></li>			        			        
-			        <li><a href="drive.html"><span>5</span>drive</a></li>			        
-			    </ul>
-			</div>
-			<div class="grid_3">
-			    <img src="images/green_stripe.png"/>
-			</div>        
-			<div class="grid_6">
-			    <div class="join">
-			        <h1>j o i n <img src="images/mail.png"/> t h e n &nbsp;&nbsp;b e c o m e  &nbsp;&nbsp;O n e &nbsp;&nbsp;F a m i l y <a href="http://www.facebook.com/group.php?gid=125077390867499" target="_blank"><img src="images/facebook.png"/></a></h1>
-			    </div>			    
-			    <h1>welcome to imagine1.org</h1>
-			    <hr/>
-			    <p>
-                    Welcome to grass-roots social change. Everything ever build was imagined first. 
-                    Everything accomplished overcame skeptics who said it could not be done. Today 
-                    imagine1.org wants you to envision one place in this world without borders or barriers. 
-                    We want you to close your eyes, take a deep breath, and brace yourself as you transport 
-                    yourself to a world where everyone you meet is in your family...One Family.
-			    </p>
-			    <h1>image1.org's &ldquo;One Family&rdquo;</h1>
-			    <hr/>
-			    <p>
-                    Members do not pay anything to join One Family. They come from every corner of the world 
-                    and would not normally mix, but take the five steps to ease tensions in our world. One Family 
-                    is not affiliated with any institution, organization, belief system, or nation, nor denies anyone, 
-                    but members share a common commitment to reunite the human family. We want the size of One Family 
-                    to grow to show world leaders; we will support them when they unite us.
-			    </p>
-			    <p>
-                    Imagine1.org's web site posts letters from members to each other about why they believe in One Family. 
-                    We also have a Facebook page which allows members to share the way any family would. They can discuss, 
-                    share photos, stories, favorite places to eat and to visit, and family recipes.			        
-			    </p> 
-			    <p>
-                    So, join us now and help us grow so we can share the human treasures found in your part of the world.			        
-			    </p>   
-			</div>
-		</div>
-	</body>
+        <link rel="stylesheet" href="css/imagine.css" />    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="javascript/underscore.js"></script>
+        <script src="javascript/backbone.js"></script>
+        <script src="javascript/app.js"></script>
+    </head>
+    <body>
+        <div class="background">
+            <div id="header">
+                <div class="logo" onclick="javascript:App.home();">
+                    Logo Area
+                </div>
+                <div class="mainbuttons">
+                    <ul>
+                        <li><a href="javascript:App.joinForm();">Join</a></li>
+                        <li><a href="">Members</a></li>      
+                        <li><img width="50px" src="images/facebook.png"/></li>                  
+                    </ul>
+                </div>    
+            </div>
+            <div id="leftBar">
+                <ul class="menu">
+			        <li><a href="javascript:App.envision();"><span>1</span>en-vi-sion</a></li>
+			        <li><a href="javascript:App.embrace();"><span>2</span>em-brace</a></li>
+			        <li><a href="javascript:App.join();"><span>3</span>join</a></li>
+			        <li><a href="javascript:App.engage();"><span>4</span>en-gage</a></li>			        			        
+			        <li><a href="javascript:App.promote();"><span>5</span>pro-mote</a></li>                    
+                </ul>    
+            </div>        
+            <div id="center">
+                
+                
+                
+            </div>    
+        </div>
+        <script type="text/template" id="home">
+            <p>imagine1.org exists to help you</p>
+            <ul>
+                <li>
+                    <a href="">en-vi-sion</a>
+                    <span>a world where you and everyone else belong to One Family</span>
+                </li>
+                <li>
+                    <a href="">em-brace</a>
+                    <span>a common vision called One Family</span>
+                </li>
+                <li>
+                    <a href="">join</a>
+                    <span>One Family then tell the world why you did</span>
+                </li>
+                <li>
+                    <a href="">en-gage</a>
+                    <span>One Family members in your daily life</span>
+                </li>      
+                <li>
+                    <a href="">pro-mote</a>
+                    <span>the vision of One Family and have fun doing it</span>
+                </li>                                                          
+            </ul>
+        </script>
+        <script type="text/template" id="envision">
+            <span>en-vi-sion [en-vizh-uh n] to picture mentally, esepecially some future event or events:
+                to envision a bright future.</span>
+            <p>THINK:</p>
+            <p>Everthing humanity ever created was envisioned first.</p>
+            <p>En-vi-sion a new way of thinking about:
+                <ul><li>What makes everyone the same</li><li>Managing our difference</li></ul>
+            </p>
+            <p>ACT:</p>
+            <ul>
+                <li>List 10 things all human beings have in common</li>
+                <li>Think of someone you would not normally interact with then compare the word "tolerate" versus "explore"</li>
+                <li>Now move on to <a href="javascript:App.embrace();">em-brace</a></li>
+            </ul>
+        </script>
+        <script type="text/template" id="embrace">
+            <span>em-brace [em-breys] to take or receive gladly or eagerly; accept willingly: <em>to embrace an idea</em></span>
+            <p>THINK:</p>
+            <p>Is a beautiful painting hidden in a box actually beautiful or does it become beautiful in the mind of the person
+                viewing it?</p>
+            <p>em-brace the One Family Vision:</p>
+            <blockquote>
+                We see a world where humanity focuses more on what all people have in common and that as One Family we empower one another
+                to move beyond tolerating our diversity to exploring and celebrating it.
+            </blockquote>
+            <p>ACT:</p>
+            <ul>
+                <li>Look at the 10 things you listed from the Envision page. Do they exist in healthy human societies or groups?</li>
+                <li>Think of someome outside your "circle of friends" then ask yourself what it would mean to "explore" the versus "tolerate" them.</li>
+                <li>Move on to <a href="javascript:App.join();">join</a></li>
+            </ul>        
+        </script>
+        <script type="text/template" id="join">
+            <span>join [join] to become a member of (an organization, party, etc.): <em>to join a club.</em></span>
+            <p>THINK:</p>
+            <p>It is often said, "I cannot hear what you are saying because I am watching what you are doing".</p>
+            <p>join after asking yourself</p>
+            <ul><li>Do I believe I belong to One Family and need to help make it stronger</li></ul>
+            <p>ACT:</p>
+            <ul>
+                <li>Click the Join Button and provide yoru contact dertails to become a One Family member</li>
+                <li>Use the member form to tell the world why you believe in the One Family Vision for you, for our world</li>
+                <li>Move on to <a href="javascript:App.engage();">engage</a></li>
+            </ul>        
+        </script>
+        <script type="text/template" id="engage">
+            <span>en-gage [en-geyj] to occupy the attention or efforts of (a person or persons): 
+                <em>They engaged her in conversation.</em></span>
+            <p>THINK:</p>
+            <pNo one ever lost weight by joining a gym unless they go there and work out.</p>
+            <p>en-gage by:</p>
+            <ul>
+                <li>Sharing information about you and your culture</li>
+                <li>Getting connected with One Family via Facebook and the blog.</li>
+            </ul>
+            <p>ACT:</p>
+            <ul>
+                <li>Join One Family's Facebook Group then start interacting with people from all around the world by saying 
+                "hello, I'm an imagine1.org's One Family member so I'm writing to find out more about your post"</li>
+                <li>Subscribe to One Family's blog YouTube Channel and send encouraging comments on videos sent by other One Family members</li>
+                <li>Join One Family's blog to share how you spread the One Family message, your fav places to go in your town, stories, poetry, and more</li>
+                <li>Move on to <a href="javascript:App.promote();">promote</a></li>
+            </ul>        
+        </script>
+        <script type="text/template" id="promote">
+            <span>pro-mote [pruh-moht] to help or encourage to exist or flourish; further: <em>to promote world peace</em></span>
+            <p>THINK:</p>
+            <p>For the One Family vision to become a full reality, we have a lot of people to contact (7 billion).</p>
+            <p>pro-mote the vision:</p>
+            <ul>
+                <li>In your family, especially to your children, and in everyday interactions</li>
+                <li>Through other organizations or creative (fun) action</li>
+            </ul>
+            <p>ACT:</p>
+            <ul>
+                <li>Organize a One Family Day in your community where people share the diversity of food, music, stories, art, or culture with each other</li>
+                <li>Create a video about why you believe in One Family and suggest it to the One Family YouTube for uploading</li>
+                <li>Print  off some imagine1.org flyers and post them on the bulletin boards at your school, office or business</li>
+                <li>Print off some business cards and use them to promote One Family</li>
+                <li>Write "imagine1.org" with chalk on the sidewalk (note: any means of spreading the word that is destructive of someone else's
+                property is not aligned with our vision but chalk on the sidewalk should be okay)</li>
+            </ul>        
+        </script>        
+        
+        <script type="text/template" id="joinForm">
+            <input type="text" name="name"/>
+            <input type="text" name="email"/>
+            <input type="text" name="country"/>                        
+        </script>s
+                                        
+    </body>
 </html>
