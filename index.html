@@ -2,63 +2,133 @@
 <html>
     <head>
         <title>Imagine 1</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/text.css" />
+        <link rel="stylesheet" href="css/960.css" />
+        <link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/imagine.css" />    
+        
         <style>
+            body{
+                background-image:url('images/background.jpg');
+                background-position: 50% 0%;
+            }
             .background{
                 width:980px;
                 margin:auto;
                 overflow: hidden;
             }
             #header{
-                padding:10px 20px;
                 width:100%;
                 height:100px;
+                margin-bottom:10px;
             }
             #leftBar{
                 float:left;
                 width:180px;
-                background:#fff;
+                background:rgba(255,255,255,.8);
                 margin-right:10px;
+                border-radius:10px;
                 
             }
-            #center{
+            #centerOuter{
                 width:500px;
-                padding:50px 20px 30px 20px;
+                padding:50px 0px 30px 20px;
                 float:left;
-                background:rgba(255,255,255,.5);
-                border-radius:50px;
+                background:rgba(255,255,255,.8);
+                border-radius:10px;
                 height:400px;
             }
+            #center{
+                width:495px;
+                height:390px;
+                overflow-y:auto;
+                overflow-x:hidden;
+            }
             .logo{
-                width:120px;
+                width:180px;
                 height:100px;
-                background:rgba(255,255,255,.5);
+                background:rgba(255,255,255,.8);
                 float:left;
                 cursor:pointer;
+                border-radius:10px;
+                color:#555;
+                margin-right:10px;
             }
             .mainbuttons{
-                
             }
             
             .mainbuttons ul{
                 list-style:none;
             }
             .mainbuttons ul li{
-                    float:left;
-            }
-            .mainbuttons li a{
-                text-align:center;
-                display:block;
+                float:left;
                 width:100px;
-                height:50px;
-                border:1px dashed #fff;
-                background:rgba(255,255,255,.5);                
+                height:37px;
+                margin: 10px 7px 0px 0px;
+                
             }
+            
+            .mainbuttons ul li.pretty {
+                border:1px dashed #fff;
+                background:rgba(255,255,255,.8);
+                /*display:block;                */
+                text-align:center;
+                border-radius:10px;
+                padding-top:5px;
+            }
+            
+            .mainbuttons li a{
+                text-decoration:none;
+                color:#555;
+                font-size:20px;   
+                border-radius:10px;             
+            }
+            .mainbuttons li a:hover{
+                color:#7db736;
+            }
+            p label{
+                font-size:18px;
+                display:block;
+                width:200px;
+                color:#555;                
+            }
+            p input{
+                font-size: 18px;
+                padding:2%;
+                width:100%;
+                color:#555;
+            }
+            p textarea{
+                width:100%;
+                padding:2%;
+                height:400px;
+            }
+            
+            p select{
+                -webkit-appearance: button;
+                 -webkit-border-radius: 2px;
+                 -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+                 -webkit-padding-end: 20px;
+                 -webkit-padding-start: 2px;
+                 -webkit-user-select: none;
+                 background-image: url(../images/select-arrow.png), 
+                   -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+                 background-position: center right;
+                 background-repeat: no-repeat;
+                 border: 1px solid #AAA;
+                 color: #555;
+                 font-size: 20px;
+                 margin: 0;
+                 overflow: hidden;
+                 padding-top: 2px;
+                 padding-bottom: 2px;
+                 text-overflow: ellipsis;
+                 white-space: nowrap;
+            }
+
+            
         </style>
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/text.css" />
-        <link rel="stylesheet" href="css/960.css" />
-        <link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/imagine.css" />    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
         <script src="javascript/underscore.js"></script>
         <script src="javascript/backbone.js"></script>
@@ -68,12 +138,12 @@
         <div class="background">
             <div id="header">
                 <div class="logo" onclick="javascript:App.home();">
-                    Logo Area
+                    <!--img src="images/logo_.jpg" width="80%"/-->
                 </div>
                 <div class="mainbuttons">
                     <ul>
-                        <li><a href="javascript:App.joinForm();">Join</a></li>
-                        <li><a href="">Members</a></li>      
+                        <li class="pretty"><a href="javascript:App.joinForm();">Join</a></li>
+                        <li class="pretty"><a href="">Members</a></li>      
                         <li><img width="50px" src="images/facebook.png"/></li>                  
                     </ul>
                 </div>    
@@ -87,10 +157,9 @@
 			        <li><a href="javascript:App.promote();"><span>5</span>pro-mote</a></li>                    
                 </ul>    
             </div>        
-            <div id="center">
-                
-                
-                
+            <div id="centerOuter">
+                <div id="center">
+                </div>
             </div>    
         </div>
         <script type="text/template" id="home">
@@ -203,10 +272,50 @@
         </script>        
         
         <script type="text/template" id="joinForm">
-            <input type="text" name="name"/>
-            <input type="text" name="email"/>
-            <input type="text" name="country"/>                        
-        </script>s
+            <h2>Sign Up Form</h2>
+            <p>
+                <label>Name</label>
+                <input type="text" name="name"/>                
+            </p>
+            <p>
+                <label>Country</label>
+                <select>
+                    <option>Algeria</option> 
+                    <option>Australia</option> 
+                    <option>Bosnia-Herzegovina</option>
+                    <option>Brazil</option>
+                    <option>Canada</option>
+                    <option>China</option>
+                    <option>Finland</option>
+                    <option>Indonesia</option>
+                    <option>Iran</option>
+                    <option>Israel</option>                                                                                                                          
+                    <option>Malta</option>
+                    <option>Nepal</option>
+                    <option>Netherlands</option>                    
+                    <option>Russia</option>  
+                    <option>South Africa</option>
+                    <option>Spain</option>
+                    <option>Sweden</option>
+                    <option>Switzerland</option>
+                    <option>Taiwan</option>
+                    <option>Thailand</option> 
+                    <option>Turkey</option>
+                    <option selected>USA</option>
+                </select>
+            </p>            
+            <p>
+                <label>Email</label>
+                <input type="text" name="email"/>                
+            </p>
+            <p>
+                <label>Your Story</label>
+                <textarea></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Next"/>
+            </p>
+        </script>
                                         
     </body>
 </html>

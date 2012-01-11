@@ -58,7 +58,8 @@
     
     .menu li a{
         font-size:20px;
-        color:#ccc;
+        /*color:#ccc;*/
+        color:#555;
         text-decoration:none;
     }
     
