@@ -19,6 +19,16 @@ $(function(){
         joinFormTemplate:_.template($("#joinForm").html()),
         memberTemplate:_.template($("#members").html()),
         
+        events: {
+          "submit #theForm" : "saveMember"
+        },        
+        saveMember: function(){
+            //$.post("test.php", $("#testform").serialize());
+            $.post("/_cms/members",$("#theForm").serialize(),function(data){
+                this.members();
+            });
+        },
+        
         initialize: function(){
             //this.el.html( this.homeTemplate );
         },
