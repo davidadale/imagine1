@@ -25,7 +25,7 @@ $(function(){
         saveMember: function(){
             //$.post("test.php", $("#testform").serialize());
             $.post("/_cms/data/members",$("#theForm").serialize(),function(data){
-                members();
+                App.members();
             });
         },
         
