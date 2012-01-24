@@ -1,4 +1,12 @@
 $(function(){
+    
+    window.Member = Backbone.Model.extend({
+        
+    })
+    
+    window.MemberList = Backbone.Collection.extend({
+        model: Member
+    })
 
     window.AppView = Backbone.View.extend({
         el:$("#center"),
@@ -9,6 +17,7 @@ $(function(){
         engageTemplate:_.template($("#engage").html()),
         promoteTemplate:_.template($("#promote").html()),
         joinFormTemplate:_.template($("#joinForm").html()),
+        memberTemplate:_.template($("#members").html()),
         
         initialize: function(){
             //this.el.html( this.homeTemplate );
@@ -33,6 +42,9 @@ $(function(){
         },
         joinForm:function(){
             this.el.html( this.joinFormTemplate );
+        },
+        members:function(){
+            this.el.html( this.memberTemplate );
         }
         
     });
