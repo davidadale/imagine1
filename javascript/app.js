@@ -65,8 +65,8 @@ $(function(){
             this.el.html( this.memberTemplate );
         },
         addOne: function(member) {
-            console.log("ding ding ding: " + member);            
-             $("#membersList").append("<li>"+member.name +"</li>" );
+            console.log("ding ding ding: " + member[0]);            
+             $("#membersList").append( "<li>" + member.name[0] + "</li>" );
         },
         addAll: function(){
             console.log("bang bang bang");
