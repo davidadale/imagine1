@@ -35,6 +35,12 @@ $(function(){
         
         initialize: function(){
             //this.el.html( this.homeTemplate );
+            MemberList.bind('add',   this.addOne, this);
+            MemberList.bind('reset', this.addAll, this);
+            MemberList.bind('all',   this.render, this);    
+            
+            members.fetch();        
+            
         },
         envision:function(){
             this.el.html( this.envisionTemplate );
@@ -58,13 +64,14 @@ $(function(){
             this.el.html( this.joinFormTemplate );
         },
         members:function(){
-            members.fetch();
+
             this.el.html( this.memberTemplate );
         },
         addOne: function(member) {
              $("#membersList").append("<li>"+member.name +"</li>" );
         },
         addAll: function(){
+            console.log("bang bang bang");
             members.each( this.addOne );
         }        
         
