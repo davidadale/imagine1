@@ -5,7 +5,8 @@ $(function(){
     })
     
     window.MemberList = Backbone.Collection.extend({
-        model: Member
+        model: Member,
+        url:'http://localhost:9000/_cms/data/q/members'
     })
     
     window.members = new MemberList
