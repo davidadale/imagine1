@@ -38,9 +38,6 @@ $(function(){
             Members.bind('add', this.addOne, this);
             Members.bind('reset',this.addAll, this);
             Members.bind('all', this.render, this);    
-            
-            Members.fetch();        
-            
         },
         envision:function(){
             this.el.html( this.envisionTemplate );
@@ -64,10 +61,11 @@ $(function(){
             this.el.html( this.joinFormTemplate );
         },
         members:function(){
-
+            Members.fetch();
             this.el.html( this.memberTemplate );
         },
         addOne: function(member) {
+            console.log("ding ding ding");            
              $("#membersList").append("<li>"+member.name +"</li>" );
         },
         addAll: function(){
