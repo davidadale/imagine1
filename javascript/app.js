@@ -9,7 +9,7 @@ $(function(){
         url:'http://localhost:9000/_cms/data/q/members'
     })
     
-    window.members = new MemberList
+    window.Members = new MemberList
 
     window.AppView = Backbone.View.extend({
         el:$("#center"),
@@ -35,11 +35,11 @@ $(function(){
         
         initialize: function(){
             //this.el.html( this.homeTemplate );
-            MemberList.bind('add',   this.addOne, this);
-            MemberList.bind('reset', this.addAll, this);
-            MemberList.bind('all',   this.render, this);    
+            Members.bind('add', this.addOne, this);
+            Members.bind('reset',this.addAll, this);
+            Members.bind('all', this.render, this);    
             
-            members.fetch();        
+            Members.fetch();        
             
         },
         envision:function(){
