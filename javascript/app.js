@@ -69,7 +69,7 @@ $(function(){
         addOne: function(member) {
             //console.log("ding ding ding: " + member[0]);     
              console.log( JSON.stringify( member ) );      
-            $("#membersList").append( "<li>" + member.name + "</li>" );
+            $("#membersList").append( "<li>" + member.name[0] + "</li>" );
         },
         addAll: function(){
             console.log("bang bang bang");
