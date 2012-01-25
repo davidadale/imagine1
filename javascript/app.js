@@ -1,7 +1,9 @@
 $(function(){
     
     window.Member = Backbone.Model.extend({
-        
+        email:"",
+        name:"",
+        country:""
     })
     
     window.MemberList = Backbone.Collection.extend({
