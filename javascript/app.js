@@ -72,7 +72,7 @@ $(function(){
         },
         addAll: function(){
             console.log("bang bang bang");
-            members.each( this.addOne );
+            Members.each( this.addOne );
         }        
         
     });
