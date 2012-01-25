@@ -7,6 +7,8 @@ $(function(){
     window.MemberList = Backbone.Collection.extend({
         model: Member
     })
+    
+    window.members = new MemberList
 
     window.AppView = Backbone.View.extend({
         el:$("#center"),
@@ -22,6 +24,7 @@ $(function(){
         events: {
           "submit #theForm" : "saveMember"
         },        
+        
         saveMember: function(){
             //$.post("test.php", $("#testform").serialize());
             $.post("/_cms/data/members",$("#theForm").serialize(),function(data){
@@ -54,8 +57,15 @@ $(function(){
             this.el.html( this.joinFormTemplate );
         },
         members:function(){
+            members.fetch();
             this.el.html( this.memberTemplate );
-        }
+        },
+        addOne: function(member) {
+             $("#membersList").append("<li>"+member.name +"</li>" );
+        },
+        addAll: function(){
+            members.each( this.addOne );
+        }        
         
     });
     
