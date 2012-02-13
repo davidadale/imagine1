@@ -18,7 +18,7 @@ $(function(){
         },
         saveMember: function(){
             //$.post("test.php", $("#testform").serialize());
-            $.post("http://localhost:9000/_cms/data/members",$("#theForm").serialize(),function(data){
+            $.post("/_cms/data/members",$("#theForm").serialize(),function(data){
                 //$("#main_view").html("<h1>Welcome to One Family</h1>");
                 document.location = "index.html"
             });
