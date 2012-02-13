@@ -11,9 +11,18 @@ $(function(){
     
     
     /* handles all the main content on the page */
-    window.MainView = Backbone.View.extend({
+    window.AppView = Backbone.View.extend({
         el:$("#main_view"),
-        homeTemplate: _.template( $("#home").html() )
-        
+        events: {
+            "submit #theForm" : "saveMember"
+        },
+        saveMember: function(){
+            //$.post("test.php", $("#testform").serialize());
+            $.post("http://localhost:9000/_cms/data/members",$("#theForm").serialize(),function(data){
+                $("#main_view").html("<h1>Welcome to One Family</h1>");
+            });
+        }    
     })
+    
+    window.App = new AppView
 })

@@ -71,18 +71,25 @@
                   <h1>Join One Family</h1>
                   <a href="members.html" class="btn" style="margin:20px 0 0 0;">View Other Members</a>
                   <hr/>
-                  <form class="form-horizontal" action="/_cms/data/members" method="POST">
+                  <form class="form-horizontal" method="POST" id="theForm" onsubmit="return false" >
                       <fieldset>
                       <div class="control-group">
-                          <label class="control-label">Name</label>
+                          <label class="control-label">First (Given)</label>
                           <div class="controls">
-                              <input type="text" name="name"/>                
+                              <input type="text" name="first"/>                
                           </div>
                       </div>
                       <div class="control-group">
+                          <label class="control-label">Last (Family)</label>
+                          <div class="controls">
+                              <input type="text" name="last"/>                
+                          </div>
+                      </div>                      
+                      <div class="control-group">
                           <label class="control-label">Country</label>
                           <div class="controls">
-                          <select name="country">
+                              <input type="text" name="country"/>
+                          <!--select name="country">
                               <option>Algeria</option> 
                               <option>Australia</option> 
                               <option>Bosnia-Herzegovina</option>
@@ -105,7 +112,7 @@
                               <option>Thailand</option> 
                               <option>Turkey</option>
                               <option selected>USA</option>
-                          </select>    
+                          </select-->    
                           </div>                      
                       </div>
                       <div class="control-group">
@@ -139,6 +146,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>                
         <script src="javascript/underscore.js"></script>
+        <script src="javascript/backbone.js"></script>
+        <script src="javascript/app.js">
         <!--script src="../javascript/video.js"></script-->                
         <script>
             $(function(){
