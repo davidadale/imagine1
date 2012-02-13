@@ -43,7 +43,7 @@
                               <li ><a href="volunteer.html">Volunteer</a></li>
                               <li ><a href="calendar.html">Events</a></li>
                               <li ><a href="about.html">About</a></li>
-                              <li ><a href="contact.html">Contact</a></li>
+                              <li class="active" ><a href="contact.html">Contact</a></li>
                             </ul>                
                         </li>
                         <li><a href="http://facebook.com/Imagine1.org" target="_blank"><img src="images/fb.png"/></a></li>                          
@@ -68,53 +68,10 @@
             </div><!--/span-->
             <div class="span9">
               <div id="main_view" class="span9 hero-unit">
-                  <h1>Join One Family</h1>
-                  <a href="members.html" class="btn" style="margin:20px 0 0 0;">View Original Members</a>
+                  <h1>Contact Us</h1>
                   <hr/>
-                  <form class="form-horizontal" method="POST" id="theForm" onsubmit="return false" >
+                  <form class="form-horizontal" method="POST" id="contactForm" onsubmit="return false" >
                       <fieldset>
-                      <div class="control-group">
-                          <label class="control-label">First (Given)</label>
-                          <div class="controls">
-                              <input type="text" name="first"/>                
-                          </div>
-                      </div>
-                      <div class="control-group">
-                          <label class="control-label">Last (Family)</label>
-                          <div class="controls">
-                              <input type="text" name="last"/>                
-                          </div>
-                      </div>                      
-                      <div class="control-group">
-                          <label class="control-label">Country</label>
-                          <div class="controls">
-                              <input type="text" name="country"/>
-                          <!--select name="country">
-                              <option>Algeria</option> 
-                              <option>Australia</option> 
-                              <option>Bosnia-Herzegovina</option>
-                              <option>Brazil</option>
-                              <option>Canada</option>
-                              <option>China</option>
-                              <option>Finland</option>
-                              <option>Indonesia</option>
-                              <option>Iran</option>
-                              <option>Israel</option>                                                                                                                          
-                              <option>Malta</option>
-                              <option>Nepal</option>
-                              <option>Netherlands</option>                    
-                              <option>Russia</option>  
-                              <option>South Africa</option>
-                              <option>Spain</option>
-                              <option>Sweden</option>
-                              <option>Switzerland</option>
-                              <option>Taiwan</option>
-                              <option>Thailand</option> 
-                              <option>Turkey</option>
-                              <option selected>USA</option>
-                          </select-->    
-                          </div>                      
-                      </div>
                       <div class="control-group">
                           <label class="control-label">Email</label>
                           <div class="controls">
@@ -122,14 +79,14 @@
                           </div>
                       </div>
                       <div class="control-group">
-                          <label class="control-label" for="letter">Member Letter</label>
+                          <label class="control-label" for="message">Message</label>
                           <div class="controls">
-                            <textarea class="input-xlarge" id="letter" rows="10" name="letter"></textarea>
-                            <p class="help-block">This will be shown as your member letter.</p>
+                            <textarea class="input-xlarge" id="message" rows="10" name="message"></textarea>
+                            <!--p class="help-block">This will be shown as your member letter.</p-->
                           </div>
                       </div>   
                       <div class="form-actions">
-                          <button type="submit" class="btn btn-primary">Join Now!</button>
+                          <button type="submit" class="btn btn-primary">Send Message</button>
                           <!--button type="reset" class="btn">Cancel</button-->
                       </div>                                         
                       </fieldset>

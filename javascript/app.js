@@ -1,86 +1,34 @@
 $(function(){
     
-    window.Member = Backbone.Model.extend({
-        email:[],
-        name:[],
-        country:[]
-    })
+    window.Member = Backbone.Model.extend();
     
     window.MemberList = Backbone.Collection.extend({
-        model: Member,
+        model:Member,
         url:'http://localhost:9000/_cms/data/q/members'
-    })
+    });
     
-    window.Members = new MemberList
-
+    window.Members = new MemberList;
+    
+    
+    /* handles all the main content on the page */
     window.AppView = Backbone.View.extend({
-        el:$("#center"),
-        homeTemplate: _.template($("#home").html() ),
-        envisionTemplate:_.template($("#envision").html()),
-        embraceTemplate:_.template($("#embrace").html()),
-        joinTemplate:_.template($("#join").html()),
-        engageTemplate:_.template($("#engage").html()),
-        promoteTemplate:_.template($("#promote").html()),
-        joinFormTemplate:_.template($("#joinForm").html()),
-        memberTemplate:_.template($("#members").html()),
-        
+        el:$("#main_view"),
         events: {
-          "submit #theForm" : "saveMember"
-        },        
-        
+            "submit #theForm" : "saveMember",
+            "submit #contactForm" : "sendMessage"
+        },
         saveMember: function(){
             //$.post("test.php", $("#testform").serialize());
             $.post("/_cms/data/members",$("#theForm").serialize(),function(data){
-                App.members();
+                document.location = "index.html"
             });
         },
-        
-        initialize: function(){
-            //this.el.html( this.homeTemplate );
-            Members.bind('add', this.addOne, this);
-            Members.bind('reset',this.addAll, this);
-            Members.bind('all', this.render, this);    
-        },
-        envision:function(){
-            this.el.html( this.envisionTemplate );
-        },
-        embrace:function(){
-            this.el.html( this.embraceTemplate );
-        },
-        join:function(){
-            this.el.html( this.joinTemplate );
-        },
-        engage:function(){
-            this.el.html( this.engageTemplate );
-        },        
-        promote:function(){
-            this.el.html( this.promoteTemplate );
-        },
-        home:function(){
-            this.el.html( this.homeTemplate );
-        },
-        joinForm:function(){
-            this.el.html( this.joinFormTemplate );
-        },
-        members:function(){
-            Members.fetch();
-            this.el.html( this.memberTemplate );
-        },
-        addOne: function(member) {
-            //console.log("ding ding ding: " + member[0]);     
-             console.log( JSON.stringify( member ) );      
-            $("#membersList").append( "<li>" + member.get("name") + "<em>" + member.get("country") + "</em>" + "</li>" );
-        },
-        addAll: function(){
-            console.log("bang bang bang");
-            Members.each( this.addOne );
-        }        
-        
-    });
+        sendMessage: function(){
+            $.post("/_cms/data/messages",$("#contactForm").serialize(),function(data){
+                document.location = "index.html"
+            });            
+        }    
+    })
     
-    window.App = new AppView;
-    
-    App.home();
-    
-    //AppView.render();
+    window.App = new AppView
 })
