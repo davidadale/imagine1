@@ -14,14 +14,19 @@ $(function(){
     window.AppView = Backbone.View.extend({
         el:$("#main_view"),
         events: {
-            "submit #theForm" : "saveMember"
+            "submit #theForm" : "saveMember",
+            "submit #contactForm" : "sendMessage"
         },
         saveMember: function(){
             //$.post("test.php", $("#testform").serialize());
             $.post("/_cms/data/members",$("#theForm").serialize(),function(data){
-                //$("#main_view").html("<h1>Welcome to One Family</h1>");
                 document.location = "index.html"
             });
+        },
+        sendMessage: function(){
+            $.post("/_cms/data/messages",$("#contactForm").serialize(),function(data){
+                document.location = "index.html"
+            });            
         }    
     })
     
