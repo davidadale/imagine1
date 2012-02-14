@@ -99,3 +99,17 @@ marquee{
     float:left;
     padding-right:10px;
 }
+
+.member_letters{
+    height:500px;
+    overflow-y:scroll;
+}
+.member_letters ul{
+    list-style:none;
+}
+
+.member_letters ul li{
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom:1px solid #ccc;
+}
