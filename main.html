@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>#{get 'title'/}</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" type="text/css" media="screen" title="no title" charset="utf-8">        
+        <style>
+            .banner{ font-size:1.1em;padding:10px 0 10px 0; }
+            .topNav li{ font-size:1.6em; }
+            .headerRow{margin-bottom:20px;}
+            .leftNav li{ font-size:1.8em; padding:15px 0 0 0;}
+            .familyAlbum{ width: 240px;}
+            .familyAlbum h2{ text-align:center;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="row">
+            <div class="span3">
+                <a href="/"><img src="images/logo.jpg" width="270px"/></a>
+                <ul class="leftNav nav nav-list">
+                  <li><a href="embrace.html">embrace</a></li>
+                  <li><a href="create.html">create</a></li>
+                  <li><a href="engage.html">engage</a></li>
+                  <li><a href="act.html">act</a></li>
+                  <li><a href="promote.html">promote</a></li>                  
+                </ul>
+                <hr/>
+                <a href="#" class="thumbnail">
+                <img src="images/map_280.png" width="270px"/>
+                </a>
+                <div class="familyAlbum">
+                <h2>One Family Album</h2>
+                <div id="myCarousel" class="carousel slide">
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                    <div class="item">
+                        <img src="images/photos/1.jpg">
+                        <div class="carousel-caption">
+                            <h4>Family Album</h4>
+                        </div>                        
+                    </div>
+                    <div class="item"><img src="images/photos/2.jpg"></div>
+                    <div class="item"><img src="images/photos/3.jpg"></div>
+                  </div>                                                                
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>    
+                </div>
+                </div><!--end family album-->
+            </div>
+            <div class="span9">
+                <div class="row banner">
+                    <div class="span9 banner">
+                        <strong>One Family Members</strong>
+                    </div>    
+                </div>    
+                <div class="row headerRow">
+                    <div class="span3">
+                        <a href="#" class="btn btn-primary btn-large">Join One Family</a>
+                        <a href="#" class="btn btn-large">Sign Petition</a>
+                    </div>  
+                    <div class="span4">
+                        <ul class="topNav nav nav-pills">
+                            <li><a href="#">Volunteer</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>                            
+                        </ul>
+                    </div>   
+                    <!--div class="span2">
+                        <a hreh="#" class="thumbnail calendar">
+                            <img src="images/calendar.png"/>
+                        </a>
+                    </div-->       
+                    <div class="span2">
+                        <img src="images/cal.png"/>
+                        <img src="images/fb.png"/>
+                        <img src="images/yt.png"/>
+                    </div>    
+                </div>    
+                <div class="row">
+                    <div class="span9">
+                        #{doLayout /}                    
+                    </div>    
+                </div>    
+            </div>        
+        </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>        
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script>
+        $(function(){
+            $('.carousel').carousel()
+        })
+            
+        </script>
+    </body>
+</html>
