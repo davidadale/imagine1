@@ -1,0 +1,29 @@
+#{cms.extends '/main.html'/}
+#{set title:'Contact Imagine1'/}
+#{set active:'contact'/}
+
+<div class="span9">
+  <div id="main_view" class="span9">
+      <h1>Contact Us</h1>
+      <hr/>
+      <form class="form-horizontal" method="POST" id="contactForm" onsubmit="return false" >
+          <fieldset>
+          <div class="control-group">
+              <label class="control-label">Email</label>
+              <div class="controls">
+                  <input type="text" name="email"/>                          
+              </div>
+          </div>
+          <div class="control-group">
+              <label class="control-label" for="message">Message</label>
+              <div class="controls">
+                <textarea class="input-xlarge" id="message" rows="10" name="message"></textarea>
+              </div>
+          </div>   
+          <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>                                         
+          </fieldset>
+      </form>
+  </div>
+</div>

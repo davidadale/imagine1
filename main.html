@@ -19,14 +19,14 @@
             <div class="span3">
                 <a href="/"><img src="images/logo.jpg" width="270px"/></a>
                 <ul class="leftNav nav nav-list">
-                  <li><a href="embrace.html">embrace</a></li>
-                  <li><a href="create.html">create</a></li>
-                  <li><a href="engage.html">engage</a></li>
-                  <li><a href="act.html">act</a></li>
-                  <li><a href="promote.html">promote</a></li>                  
+                  <li class="#{cms.active 'embrace'/}"><a href="embrace.html">embrace</a></li>
+                  <li class="#{cms.active 'create'/}"><a href="create.html">create</a></li>
+                  <li class="#{cms.active 'engage'/}"><a href="engage.html">engage</a></li>
+                  <li class="#{cms.active 'act'/}"><a href="act.html">act</a></li>
+                  <li class="#{cms.active 'promote'/}"><a href="promote.html">promote</a></li>                  
                 </ul>
                 <hr/>
-                <a href="#" class="thumbnail">
+                <a href="http://maps.google.com/maps/ms?vps=2&ie=UTF8&hl=en&oe=UTF8&msa=0&msid=203278782198265479815.0004b96818943bf7ba392" target="_blank" class="thumbnail">
                 <img src="images/map_280.png" width="270px"/>
                 </a>
                 <div class="familyAlbum">
@@ -51,19 +51,23 @@
             <div class="span9">
                 <div class="row banner">
                     <div class="span9 banner">
-                        <strong>One Family Members</strong>
+                        <strong>One Family Members </strong>
+                        #{cms.collection name:"members", as:"member" }
+                            <span>${member.first}</span>
+                        #{/cms.collection}
+
                     </div>    
                 </div>    
                 <div class="row headerRow">
                     <div class="span3">
-                        <a href="#" class="btn btn-primary btn-large">Join One Family</a>
-                        <a href="#" class="btn btn-large">Sign Petition</a>
+                        <a href="/join.html" class="btn btn-primary btn-large">Join One Family</a>
+                        <a  href="http://www.thepetitionsite.com/1/One-Family-imagine1/" target="_blank" class="btn btn-large">Sign Petition</a>
                     </div>  
                     <div class="span4">
                         <ul class="topNav nav nav-pills">
-                            <li><a href="#">Volunteer</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>                            
+                            <li class="#{cms.active 'volunteer'/}"><a href="/volunteer.html">Volunteer</a></li>
+                            <li class="#{cms.active 'about'/}"><a href="/about.html">About</a></li>
+                            <li class="#{cms.active 'contact'/}"><a href="/contact.html">Contact</a></li>                            
                         </ul>
                     </div>   
                     <!--div class="span2">
@@ -72,9 +76,9 @@
                         </a>
                     </div-->       
                     <div class="span2">
-                        <img src="images/cal.png"/>
-                        <img src="images/fb.png"/>
-                        <img src="images/yt.png"/>
+                        <a href="/events.html" target="_blank"><img src="images/cal.png"/></a>
+                        <a href="http://facebook.com/Imagine1.org" target="_blank"><img src="images/fb.png"/></a>
+                        <a href="http://www.youtube.com/user/Imagine1Tube" target="_blank"><img src="images/yt.png"/></a>
                     </div>    
                 </div>    
                 <div class="row">
@@ -85,13 +89,27 @@
             </div>        
         </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>     
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="/javascript/jquery.fitvid.js"></script>   
+        <script src="/javascript/smooth-add.js"></script>           
+                
         <script>
-        $(function(){
-            $('.carousel').carousel()
-        })
-            
+            function loadBm(){
+                var el = $("#member_letters_all li:first");
+               
+               smoothAdd('member_letters', el.html()  );
+               
+               el.remove();
+               
+               setTimeout( loadBm, 4000 );
+            }
+            $(function(){
+                $('.carousel').carousel()
+                $(".container").fitVids();
+                t = setTimeout(loadBm, 4000);
+            }) 
+
         </script>
     </body>
 </html>
