@@ -10,40 +10,49 @@
 </style>
 <div class="row">
     <div class="span5">
+        <div class="grey_box">
         <h1>Welcome Home</h1>
         <p>Imagine1.org exists to help us explore a new world of human unity, one we will build together. Below you will find the steps you can take to help us get there.</p>
         <ul class="home_list">
-            <li><strong>embrace</strong> (joining One Family and bring others home with you ) </li>
+            <li><strong>embrace</strong> (joining One Family and bring others home with you) </li>
             <li><strong>create</strong> (sharing testimonials, songs, art, videos, poems, stories) </li>
             <li><strong>engage</strong> (via conversing in the blog, sharing ideas, attending events) </li>
             <li><strong>act</strong> (supporting cool projects around the world)</li>
             <li><strong>promote</strong> (finding fun ways to get the message out)</li>
         </ul>
+        </div>
     </div>
     <div class="span4">
-        <h3>2012 Song Contest - Prize NOW $1000</h3>
+        <div class="grey_box">
+        <h2>2012 Song Contest</h2><p><span class="prize">$1,000 Prize</span></p>
+        <p>Visit this video for details and send to all your favorite bands, songwriters, musicians.</p>
         <iframe width="300" height="182" src="http://www.youtube.com/embed/nUIR4pZU6-0" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>    
 </div>
 <div class="row">
     <div class="span5">
+        <div class="grey_box">
         <h2>Welcome to imagine1</h2>
-        <p>Visit the video to meet the founders of imagine1.org and learn how you can help build One Family.</p>
+        <p>Meet the founders of imagine1.org and learn how you can help build One Family.</p>
         <iframe width="420" height="315" src="http://www.youtube.com/embed/bPDdcm_zwFg" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
     <div class="span4">
-        <hr/>
-        <h3>What people are saying about One Family</h3>
+        <div class="grey_box">
+        <h2>What people are saying about One Family</h2>
         <ul id="member_letters">
             #{cms.collection name:"members", as:"member", limit:7}
-            <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
+                <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
             #{/cms.collection}
         </ul>    
+        </div>
     </div>       
     <ul style="display:none;" id="member_letters_all">
         #{cms.collection name:"members", as:"member", skip:7}
             <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
         #{/cms.collection}
     </ul>     
+
 </div>    
 

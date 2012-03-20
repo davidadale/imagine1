@@ -1,0 +1,36 @@
+.grey_box{ 
+    font-size:18px; 
+    font-weight:200;
+    line-height:27px;
+    color:#333;
+    font-family:'Helvetica Neue',Helvetica, Arial,sans-serif;
+    background:whiteSmoke;
+    border-radius:6px;
+    line-height:18px;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+.grey_box p{
+    font-size:18px;
+    font-weight:200;
+    line-height:27px;
+    margin:0 0 9px;
+}
+
+.grey_box h1{
+    font-size:50px;
+    font-weight:bold;
+    line-height:1;
+    letter-spacing:-1px;
+}
+
+.grey_box h2{
+    font-size:20px;
+}
+
+.grey_box ul li{
+    padding-top:10px;
+}
+
+.prize{ font-size:1.5em;font-weight:bold;}

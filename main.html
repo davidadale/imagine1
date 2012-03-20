@@ -4,6 +4,7 @@
         <title>#{get 'title'/}</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" type="text/css" media="screen" title="no title" charset="utf-8">        
+        <link rel="stylesheet" href="stylesheet/site.css" type="text/css" media="screen" title="no title" charset="utf-8">                
         <style>
             .banner{ font-size:1.1em;padding:10px 0 10px 0; }
             .topNav li{ font-size:1.6em; }
@@ -34,14 +35,9 @@
                 <div id="myCarousel" class="carousel slide">
                   <!-- Carousel items -->
                   <div class="carousel-inner">
-                    <div class="item">
-                        <img src="images/photos/1.jpg">
-                        <div class="carousel-caption">
-                            <h4>Family Album</h4>
-                        </div>                        
-                    </div>
-                    <div class="item"><img src="images/photos/2.jpg"></div>
-                    <div class="item"><img src="images/photos/3.jpg"></div>
+                    #{cms.randomList times:10,max:59}
+                        <div class="item"><img width="100%" src="images/photos/${random}.jpg"></div>
+                    #{/cms.randomList}
                   </div>                                                                
                   <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                   <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>    
@@ -52,9 +48,11 @@
                 <div class="row banner">
                     <div class="span9 banner">
                         <strong>One Family Members </strong>
+                        <marquee scrollamount="2" width="50%">
                         #{cms.collection name:"members", as:"member" }
-                            <span>${member.first}</span>
+                            ${member.first} ${member.last}, ${member.country}
                         #{/cms.collection}
+                        </marquee>
 
                     </div>    
                 </div>    
@@ -97,12 +95,12 @@
         <script>
             function loadBm(){
                 var el = $("#member_letters_all li:first");
+               if( el.html() ){
+                   smoothAdd('member_letters', el.html()  );
+                   el.remove();
+                   setTimeout( loadBm, 4000 );
+                }
                
-               smoothAdd('member_letters', el.html()  );
-               
-               el.remove();
-               
-               setTimeout( loadBm, 4000 );
             }
             $(function(){
                 $('.carousel').carousel()
