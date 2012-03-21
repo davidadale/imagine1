@@ -30,7 +30,8 @@
                 <a href="http://maps.google.com/maps/ms?vps=2&ie=UTF8&hl=en&oe=UTF8&msa=0&msid=203278782198265479815.0004b96818943bf7ba392" target="_blank" class="thumbnail">
                 <img src="images/map_280.png" width="270px"/>
                 </a>
-                <div class="familyAlbum">
+                <br/>
+                <div class="grey_box">    
                 <h2>One Family Album</h2>
                 <div id="myCarousel" class="carousel slide">
                   <!-- Carousel items -->
@@ -39,8 +40,8 @@
                         <div class="item"><img width="100%" src="images/photos/${random}.jpg"></div>
                     #{/cms.randomList}
                   </div>                                                                
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>    
+                  <!--a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a-->
+                  <!--a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a-->    
                 </div>
                 </div><!--end family album-->
             </div>
@@ -53,7 +54,6 @@
                             ${member.first} ${member.last}, ${member.country}
                         #{/cms.collection}
                         </marquee>
-
                     </div>    
                 </div>    
                 <div class="row headerRow">
@@ -87,6 +87,11 @@
             </div>        
         </div>
         </div>
+
+        <footer>
+          <p>Copyright 2012 &copy; imagine1.org, all rights reserved</p>
+        </footer>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>     
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="/javascript/jquery.fitvid.js"></script>   
