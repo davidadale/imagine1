@@ -1,0 +1,14 @@
+<div class="grey_box">
+<h2>What people are saying about One Family</h2>
+<ul id="member_letters">
+    #{cms.collection name:"members", as:"member", limit:7}
+        <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
+    #{/cms.collection}
+</ul>    
+</div>
+<ul style="display:none;" id="member_letters_all">
+    #{cms.collection name:"members", as:"member", skip:7}
+        <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
+    #{/cms.collection}
+</ul>
+<!-- there is javascript on the main.html page that will scroll items out of member_letters_all into member_letters -->

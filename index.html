@@ -39,20 +39,8 @@
         </div>
     </div>
     <div class="span4">
-        <div class="grey_box">
-        <h2>What people are saying about One Family</h2>
-        <ul id="member_letters">
-            #{cms.collection name:"members", as:"member", limit:7}
-                <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
-            #{/cms.collection}
-        </ul>    
-        </div>
+        #{cms.include "/what_people_are_saying.html"/}
     </div>       
-    <ul style="display:none;" id="member_letters_all">
-        #{cms.collection name:"members", as:"member", skip:7}
-            <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
-        #{/cms.collection}
-    </ul>     
 
 </div>    
 
