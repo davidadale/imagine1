@@ -27,9 +27,7 @@
         
 <script>
     $.get('/_cms/data/q/members',function(data){
-        alert( data )
         $(data).each( function(){
-            alert( this );
             $("#userList").append(
                 "<tr><td>" +
                     this.first+
