@@ -1,20 +1,30 @@
-#{cms.extends '/main.html'/}
-#{set title:"Members Report"/}
-<div class="container">
-<table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>First</th>
-        <th>Last</th>
-        <th>Country</th>
-        <th>Email</th>
-        <th>Letter</th>        
-      </tr>
-    </thead>
-    <tbody id="userList">
-    </tbody>
-</table>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Report</title>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css" type="text/css" media="screen" title="no title" charset="utf-8">        
+        <link rel="stylesheet" href="/stylesheet/site.css" type="text/css" media="screen" title="no title" charset="utf-8">                
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>             
+    </head>
+    <body>
+        <div class="container">
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Country</th>
+                    <th>Email</th>
+                    <th>Letter</th>        
+                  </tr>
+                </thead>
+                <tbody id="userList">
+                </tbody>
+            </table>
+        </div>
+        
 <script>
     $.get('/_cms/data/q/members',function(data){
         alert( data )
@@ -36,3 +46,5 @@
     },'json');
 </script>
 
+</body>
+</html>
