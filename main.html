@@ -37,9 +37,7 @@
                 <div id="myCarousel" class="carousel slide">
                   <!-- Carousel items -->
                   <div class="carousel-inner">
-                    #{cms.randomList times:10,max:59}
-                        <div class="item"><img width="100%" src="images/photos/${random}.jpg"></div>
-                    #{/cms.randomList}
+
                   </div>                                                                
                   <!--a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a-->
                   <!--a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a-->    
@@ -51,9 +49,7 @@
                     <div class="span9 banner">
                         <strong>One Family Members </strong>
                         <marquee scrollamount="2" width="50%">
-                        #{cms.collection name:"members", as:"member" }
-                            ${member.first} ${member.last}, ${member.country}
-                        #{/cms.collection}
+
                         </marquee>
                     </div>    
                 </div>    
@@ -87,11 +83,14 @@
                 </div>    
             </div>        
         </div>
+        <div class="row">
+            <div class="span12">
+                <center><p>Copyright 2012 &copy; imagine1.org, all rights reserved</p></center>
+            </div>
+        </div>
         </div>
 
-        <footer>
-          <p>Copyright 2012 &copy; imagine1.org, all rights reserved</p>
-        </footer>
+
 
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="/javascript/jquery.fitvid.js"></script>   
