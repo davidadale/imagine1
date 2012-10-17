@@ -8,7 +8,9 @@
 </div>
 <ul style="display:none;" id="member_letters_all">
     #{cms.collection name:"members", as:"member", skip:7}
+    #{if member.letter}
         <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
+    #{/if}    
     #{/cms.collection}
 </ul>
 <!-- there is javascript on the main.html page that will scroll items out of member_letters_all into member_letters -->
