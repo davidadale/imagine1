@@ -2,13 +2,15 @@
 <h2>What people are saying about One Family</h2>
 <ul id="member_letters">
     #{cms.collection name:"members", as:"member", limit:7}
+        #{if member.letter }
         <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
+        #{/if}    
     #{/cms.collection}
 </ul>    
 </div>
 <ul style="display:none;" id="member_letters_all">
     #{cms.collection name:"members", as:"member", skip:7}
-    #{if member.letter}
+    #{if member.letter }
         <li>${member.first} ${member.last} &mdash; ${member.letter}</li>
     #{/if}    
     #{/cms.collection}
