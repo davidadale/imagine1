@@ -37,7 +37,9 @@
                 <div id="myCarousel" class="carousel slide">
                   <!-- Carousel items -->
                   <div class="carousel-inner">
-
+                    #{cms.randomList times:10,max:59}
+                        <div class="item"><img width="100%" src="images/photos/${random}.jpg"></div>
+                    #{/cms.randomList}
                   </div>                                                                
                   <!--a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a-->
                   <!--a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a-->    
